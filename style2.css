@@ -57,16 +57,18 @@ body {
 } */
 /* Pour la grille du jeu */
 
-.grid {
-  height: 350px; /* Ajustement de la hauteur */
-  min-width: 630px; /* Ajustement de la largeur */
+
+.grid 
+{
+  height: 300px; /* Ajustement de la hauteur */
+  min-width: 200px; /* Ajustement de la largeur*/
   display: flex;
   flex-wrap: wrap;
-  margin-left: 10px;
+  margin-left: 5px;
   margin-top: 5px;
   background-color: rgba(109, 127, 151, 0.5);
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
   color: #85796b;
 }
@@ -76,7 +78,7 @@ body {
   width: 70px;
 }
 
-/* Pour les titres */
+
 h3, h1 {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -86,18 +88,18 @@ h1 {
   margin-top: -5px;
 }
 
-/* Pour la scoreboard */
+
 .score-board {
   background-color: pink;
   border-radius: 10px;
-  margin: 20px auto;
+  margin: 100px auto;
   padding: 10px;
   width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-image: linear-gradient(#FFB6C1, #FFC0CB);
+  background-image: linear-gradient(#f83ba9, #491031);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
   color: #85796b;
 }
