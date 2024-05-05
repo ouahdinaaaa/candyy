@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid')
   const scoreDisplay = document.getElementById('score')
   const width = 9; // 9 colonnes
-  const height = 3; // 5 lignes
+  const height = 5; // 5 lignes
   const squares = []
   let score = 0
   
