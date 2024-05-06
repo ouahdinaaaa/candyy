@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid')
   const scoreDisplay = document.getElementById('score')
-  const width = 9; // 9 colonnes
-  const height = 5; // 5 lignes
+  const width = 10; // 9 colonnes
+  const height = 4; // 5 lignes
   const squares = []
   let score = 0
   
@@ -22,16 +22,16 @@ function createBoard() {
     square.setAttribute('draggable', true);
     square.setAttribute('id', i);
     let randomColor = Math.floor(Math.random() * candyColors.length);
-    square.style.backgroundImage = `url(${candyColors[randomColor]})`; // Assurez-vous d'utiliser "url()" pour spécifier une image de fond
+    // square.style.backgroundImage = `url(${candyColors[randomColor]})`; // Assurez-vous d'utiliser "url()" pour spécifier une image de fond
     grid.appendChild(square);
     squares.push(square);
   }
 
   // Définissez le style de la grille pour afficher les éléments en tant que grille de 5 lignes sur 9 colonnes
   grid.style.display = 'grid';
-  grid.style.gridTemplateRows = 'repeat(5, 1fr)'; // Répéter le nombre de lignes
-  grid.style.gridTemplateColumns = 'repeat(9, 1fr)'; // Répéter le nombre de colonnes
-  grid.style.gridGap = '5px'; // Espacement entre les cellules
+  grid.style.gridTemplateRows = 'repeat(4, 1fr)'; // Répéter le nombre de lignes
+  grid.style.gridTemplateColumns = 'repeat(10, 1fr)'; // Répéter le nombre de colonnes
+  // grid.style.gridGap = '2px'; // Espacement entre les cellules
 }
 
 // Définir la largeur et la hauteur de la grille
@@ -92,7 +92,7 @@ createBoard();
   
   //drop candies once some have been cleared
   function moveIntoSquareBelow() {
-      for (i = 0; i < 55; i ++) {
+      for (i = 0; i < 30; i ++) {
           if(squares[i + width].style.backgroundImage === '') {
               squares[i + width].style.backgroundImage = squares[i].style.backgroundImage
               squares[i].style.backgroundImage = ''
@@ -111,7 +111,7 @@ createBoard();
   //for row of Four
     function checkRowForFour() {
       for (i = 0; i < 60; i ++) {
-        let rowOfFour = [i, i+1, i+2, i+3]
+        let rowOfFour = [i, i+1, i+2]
         let decidedColor = squares[i].style.backgroundImage
         const isBlank = squares[i].style.backgroundImage === ''
   
@@ -119,7 +119,7 @@ createBoard();
         if (notValid.includes(i)) continue
   
         if(rowOfFour.every(index => squares[index].style.backgroundImage === decidedColor && !isBlank)) {
-          score += 4
+          score += 3
           scoreDisplay.innerHTML = score
           rowOfFour.forEach(index => {
           squares[index].style.backgroundImage = ''
@@ -149,24 +149,24 @@ createBoard();
   
     //for row of Three
     function checkRowForThree() {
-      for (i = 0; i < 61; i ++) {
-        let rowOfThree = [i, i+1, i+2]
-        let decidedColor = squares[i].style.backgroundImage
-        const isBlank = squares[i].style.backgroundImage === ''
-  
-        const notValid = [6, 7, 14, 15, 22, 23, 30, 31, 38, 39, 46, 47, 54, 55]
-        if (notValid.includes(i)) continue
-  
-        if(rowOfThree.every(index => squares[index].style.backgroundImage === decidedColor && !isBlank)) {
-          score += 3
-          scoreDisplay.innerHTML = score
+      for (let i = 0; i < 63; i++) { // Correction de la limite supérieure pour inclure toutes les séquences possibles
+        let rowOfThree = [i, i + 1, i + 2]; // Séquence de trois bonbons alignés horizontalement
+        let decidedColor = squares[i].style.backgroundImage;
+        const isBlank = squares[i].style.backgroundImage === '';
+    
+        const notValid = [6, 7, 14, 15, 22, 23, 30, 31, 38, 39, 46, 47, 54, 55]; // Indices non valides pour les débuts de séquence
+        if (notValid.includes(i % width)) continue; // Utilisation du modulo pour vérifier l'indice dans la ligne
+    
+        if (rowOfThree.every(index => squares[index].style.backgroundImage === decidedColor && !isBlank)) {
+          score += 3;
+          scoreDisplay.innerHTML = score;
           rowOfThree.forEach(index => {
-          squares[index].style.backgroundImage = ''
-          })
+            squares[index].style.backgroundImage = '';
+          });
         }
       }
     }
-    checkRowForThree()
+
   
   //for column of Three
     function checkColumnForThree() {

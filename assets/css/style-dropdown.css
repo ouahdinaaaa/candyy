@@ -1615,6 +1615,7 @@ display: inline-block;
 .s_twitter{background: -webkit-linear-gradient(bottom, #0CBCE3, #0CBCE3);background: linear-gradient(0deg, #0CBCE3, #0CBCE3);}
 .s_instagram{background: -webkit-linear-gradient(bottom, #9d0191, #9d0191);background: linear-gradient(0deg, #9d0191, #9d0191);}
 .s_linkedin{background: -webkit-linear-gradient(bottom, #0e76a8, #0e76a8);background: linear-gradient(0deg, #0e76a8, #0e76a8);}
+.s_telegram{background: -webkit-linear-gradient(bottom, #0e76a8, #008ed0);background: linear-gradient(0deg, #00ddff, #0e76a8);}
 /*END FOOTER SOCIAL DESIGN*/
 .footer_copyright {
 	border-top: 1px solid rgba(255,255,255,0.08);
