@@ -90,7 +90,7 @@ a.btn_red {color: #FFF;}
 
 /* Social Login Form */
 .social_login {}
-.social_login .social_box {display:block; clear:both; padding:10px; margin-bottom: 10px; background: #0a1634; overflow: hidden;}
+.social_login .social_box {display:block; clear:both; padding:10px; margin-bottom: 10px; background: #6bd1f3; overflow: hidden;}
 .social_login .icon {
 	display: block;
 	width: 10px;

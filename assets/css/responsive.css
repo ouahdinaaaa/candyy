@@ -24,8 +24,8 @@
 
 /*START 768PX SIZE DEVICE*/
 @media only screen and (max-width:768px) {
-.bg-faded {background-color:#0a1634;}
-.navbar-fixed {background: #0a1634;}
+.bg-faded {background-color:#6bd1f3 ;}
+.navbar-fixed {background: #6bd1f3 ;}
 .navbar-brand { padding-top: 20px;}
 .slicknav_menu {
 	font-size: 15px;
